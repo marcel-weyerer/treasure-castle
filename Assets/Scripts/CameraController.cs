@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
     private Coroutine _moveCoroutine;
 
     // Coroutine properties
-    private readonly float _waitSeconds = 3f;
+    private readonly float _waitSeconds = 2f;
     private readonly float _moveDuration = 3f;
 
     void OnEnable()

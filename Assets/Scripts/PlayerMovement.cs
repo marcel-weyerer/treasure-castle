@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 5f;
 
+    [SerializeField]
+    private Animator animator;
+
     private SpriteRenderer _spriteRenderer;
 
     private LookDirection _currentLookDirection;
@@ -31,8 +34,11 @@ public class PlayerMovement : MonoBehaviour
         bool moveLeft = Keyboard.current.aKey.isPressed;
         bool moveRight = Keyboard.current.dKey.isPressed;
 
-        if (moveLeft && moveRight)
+        if (moveLeft && moveRight) 
+        {
+            animator.SetInteger("CharacterState", (int)CharacterStates.Idle);
             return;
+        }
 
         if (moveLeft)
         {
@@ -44,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
                 // Send player turn event
                 PlayerTurn?.Invoke(LookDirection.Left);
             }
+
+            animator.SetInteger("CharacterState", (int)CharacterStates.Running);
 
             Move(-1f);
         } 
@@ -58,7 +66,13 @@ public class PlayerMovement : MonoBehaviour
                 PlayerTurn?.Invoke(LookDirection.Right);
             }
 
+            animator.SetInteger("CharacterState", (int)CharacterStates.Running);
+
             Move(1f);
+        }
+        else
+        {
+            animator.SetInteger("CharacterState", (int)CharacterStates.Idle);
         }
     }
 
@@ -69,3 +83,9 @@ public class PlayerMovement : MonoBehaviour
 }
 
 public enum LookDirection {Left, Right};
+
+public enum CharacterStates
+{
+    Idle = 0,
+    Running = 1
+}
