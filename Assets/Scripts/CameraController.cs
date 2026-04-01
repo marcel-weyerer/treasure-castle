@@ -21,9 +21,9 @@ public class CameraController : MonoBehaviour
         playerMovement.PlayerTurn += HandlePlayerTurn;
     }
 
-    void Start()
+    void Osable()
     {
-        _currentLookDireciton = LookDirection.Right;
+        playerMovement.PlayerTurn -= HandlePlayerTurn;
     }
 
     private void HandlePlayerTurn(LookDirection direction)
@@ -37,6 +37,7 @@ public class CameraController : MonoBehaviour
         Vector3 currentPos = transform.localPosition;
         transform.localPosition = new (0f, currentPos.y, currentPos.z);
 
+        // Wait before offsetting the camera
         if (_waitCoroutine != null)
             StopCoroutine(_waitCoroutine);
 
