@@ -16,7 +16,7 @@ MonoBehaviour:
   master:
     m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 2
+      <length>k__BackingField: 4
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
@@ -26,8 +26,26 @@ MonoBehaviour:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 1
-          outSlope: 1
+          inSlope: 0.6022659
+          outSlope: 0.6022659
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.35586736
+          value: 0.3070866
+          inSlope: 1.0049447
+          outSlope: 1.0049447
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.6594388
+          value: 0.71653545
+          inSlope: 1.3347524
+          outSlope: 1.3347524
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
@@ -35,8 +53,8 @@ MonoBehaviour:
         - serializedVersion: 3
           time: 1
           value: 1
-          inSlope: 1
-          outSlope: 1
+          inSlope: 0.5742535
+          outSlope: 0.5742535
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
@@ -204,7 +222,7 @@ MonoBehaviour:
   active: 1
   type:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 8
   intensity:
     m_OverrideState: 1
     m_Value: 0
@@ -309,7 +327,7 @@ MonoBehaviour:
     m_Value: 0.9
   intensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
   scatter:
     m_OverrideState: 1
     m_Value: 0.7
@@ -378,10 +396,10 @@ MonoBehaviour:
     m_Value: 0
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 68.87
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 30
+    m_Value: 24.8
   gaussianMaxRadius:
     m_OverrideState: 1
     m_Value: 1
@@ -653,7 +671,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.1
 --- !u!114 &5762530381802164056
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -770,7 +788,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.25
   smoothness:
     m_OverrideState: 1
     m_Value: 0.2

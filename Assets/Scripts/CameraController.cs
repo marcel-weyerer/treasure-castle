@@ -21,9 +21,15 @@ public class CameraController : MonoBehaviour
         playerMovement.PlayerTurn += HandlePlayerTurn;
     }
 
-    void Osable()
+    void OnDisable()
     {
         playerMovement.PlayerTurn -= HandlePlayerTurn;
+    }
+
+    void Start()
+    {
+        Vector3 currentPos = transform.localPosition;
+        transform.localPosition = new (currentPos.x + 0.5f, currentPos.y, currentPos.z);
     }
 
     private void HandlePlayerTurn(LookDirection direction)
@@ -46,7 +52,7 @@ public class CameraController : MonoBehaviour
 
     private IEnumerator WaitAfterTurn()
     {
-        yield return new WaitForSeconds(_waitSeconds);
+        yield return new WaitForSecondsRealtime(_waitSeconds);
 
         if (_moveCoroutine != null)
             StopCoroutine(_moveCoroutine);

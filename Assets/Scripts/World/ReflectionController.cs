@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ReflectionCameraController : MonoBehaviour
+public class ReflectionController : MonoBehaviour
 {
     [SerializeField] private Transform mainCamera;
 

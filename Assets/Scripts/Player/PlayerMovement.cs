@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(PlayerInteraction))]
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Parameters")]
@@ -27,10 +28,12 @@ public class PlayerMovement : MonoBehaviour
 
     // Dash properties
     private bool _dashAllowed = true;
-    private bool _isDashing = false;
+    public bool IsDashing { get; set; } = false;
     private Coroutine _dashRoutine;
     private Coroutine _cooldownRoutine;
 
+    // Player components
+    private PlayerInteraction _playerInteraction;
     private SpriteRenderer _spriteRenderer;
     private LookDirection _currentLookDirection;
 
@@ -39,23 +42,24 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        _playerInteraction = GetComponent<PlayerInteraction>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _currentLookDirection = LookDirection.Right;
-    }
 
-    void Start()
-    {
-        PlayerTurn?.Invoke(LookDirection.Right);
+        _currentLookDirection = LookDirection.Right;
     }
 
     void Update()
     {
+        // Don't move when the player is currently interacting
+        if (_playerInteraction.IsInteracting)
+            return;
+
         bool moveLeft = Keyboard.current.aKey.isPressed;
         bool moveRight = Keyboard.current.dKey.isPressed;
 
         if (moveLeft && moveRight) 
         {
-            if (!_isDashing)
+            if (!IsDashing)
                 animator.SetInteger("CharacterState", (int)CharacterStates.Idle);
             return;
         }
@@ -64,31 +68,31 @@ public class PlayerMovement : MonoBehaviour
         {
             FaceLeft();
 
-            if (_dashAllowed && !_isDashing && Keyboard.current.aKey.wasPressedThisFrame && CheckDoubleTap(ref _lastLeftTapTime)) 
+            if (_dashAllowed && !IsDashing && Keyboard.current.aKey.wasPressedThisFrame && CheckDoubleTap(ref _lastLeftTapTime)) 
             {
                 Dash(-1f);
                 return;
             }
             
-            if (!_isDashing)
+            if (!IsDashing)
                 Move(-1f);
         } 
         else if (moveRight)
         {
             FaceRight();
 
-            if (_dashAllowed && !_isDashing && Keyboard.current.dKey.wasPressedThisFrame && CheckDoubleTap(ref _lastRightTapTime)) 
+            if (_dashAllowed && !IsDashing && Keyboard.current.dKey.wasPressedThisFrame && CheckDoubleTap(ref _lastRightTapTime)) 
             {
                 Dash(1f);
                 return;
             }
             
-            if (!_isDashing)
+            if (!IsDashing)
                 Move(1f);
         }
         else
         {
-            if (!_isDashing)
+            if (!IsDashing)
                 animator.SetInteger("CharacterState", (int)CharacterStates.Idle);
         }
     }
@@ -154,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator DashCoroutine(float direction)
     {
-        _isDashing = true;
+        IsDashing = true;
         _dashAllowed = false;
 
         // Set animator state
@@ -176,7 +180,7 @@ public class PlayerMovement : MonoBehaviour
 
         StartCoroutine(DashCooldown());
 
-        _isDashing = false;
+        IsDashing = false;
         _dashRoutine = null;
     }
 
@@ -194,5 +198,6 @@ public enum CharacterStates
 {
     Idle = 0,
     Running = 1,
-    Dash = 2
+    Dash = 2,
+    Interacting = 3
 }
