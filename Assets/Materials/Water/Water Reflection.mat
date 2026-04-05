@@ -67,6 +67,6 @@ Material:
     m_Colors:
     - _NoiseTiling: {r: 1, g: 1, b: 0, a: 0}
     - _Offset: {r: 0, g: 0.15, b: 0, a: 0}
-    - _Tint: {r: 0.36862746, g: 0.7058824, b: 0.6431373, a: 1}
+    - _Tint: {r: 0.6127626, g: 0.8490566, b: 0.8050949, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -1,67 +1,10 @@
 fileFormatVersion: 2
-guid: 351e20cb90397a74496094386d907d98
+guid: d4fa81ad159161b4f810a3bc77e041b3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1708298989734703246
-    second: Water Reflection_0
-  - first:
-      213: 3173004689682008117
-    second: Water Reflection_1
-  - first:
-      213: 6613812683726941108
-    second: Water Reflection_2
-  - first:
-      213: 3607274785859721078
-    second: Water Reflection_3
-  - first:
-      213: 1393973448332501845
-    second: Water Reflection_4
-  - first:
-      213: 861000606161428715
-    second: Water Reflection_5
-  - first:
-      213: -2338319922011612778
-    second: Water Reflection_6
-  - first:
-      213: -47953706416752829
-    second: Water Reflection_7
-  - first:
-      213: 1125398299605469794
-    second: Water Reflection_8
-  - first:
-      213: -2464865025399588283
-    second: Water Reflection_9
-  - first:
-      213: -5240598011175964617
-    second: Water Reflection_10
-  - first:
-      213: 1149194333739688448
-    second: Water Reflection_11
-  - first:
-      213: -2624374408076913491
-    second: Water Reflection_12
-  - first:
-      213: 5181011607403127092
-    second: Water Reflection_13
-  - first:
-      213: -7804306223605949991
-    second: Water Reflection_14
-  - first:
-      213: 3429720612483321954
-    second: Water Reflection_15
-  - first:
-      213: 4798058838117864596
-    second: Water Reflection_16
-  - first:
-      213: -7796946389960980447
-    second: Water Reflection_17
-  - first:
-      213: 7315752339318760152
-    second: Water Reflection_18
-  - first:
-      213: 9048869550954775341
-    second: Water Reflection_19
+      213: -2322180950842035098
+    second: Coins_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,9 +40,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -170,441 +113,529 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Water Reflection_0
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 217
-        width: 131
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 27f44baae17ea48e0800000000000000
-      internalID: -1708298989734703246
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Reflection_1
-      rect:
-        serializedVersion: 2
-        x: 218
-        y: 240
-        width: 10
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 538052734f6c80c20800000000000000
-      internalID: 3173004689682008117
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Reflection_2
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 198
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4bb6488289bf8cb50800000000000000
-      internalID: 6613812683726941108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Reflection_3
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 195
-        width: 44
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 677546a3e4d9f0230800000000000000
-      internalID: 3607274785859721078
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Reflection_4
-      rect:
-        serializedVersion: 2
-        x: 222
-        y: 191
-        width: 25
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5536f263773685310800000000000000
-      internalID: 1393973448332501845
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Reflection_5
+      name: Coins_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 183
-        width: 9
-        height: 6
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: be0e5a15d73e2fb00800000000000000
-      internalID: 861000606161428715
+      spriteID: 664b1e88ab4f5cfd0800000000000000
+      internalID: -2322180950842035098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Reflection_6
+      name: Coins_1
       rect:
         serializedVersion: 2
-        x: 188
-        y: 179
-        width: 6
-        height: 6
+        x: 16
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 699574d7b6e9c8fd0800000000000000
-      internalID: -2338319922011612778
+      spriteID: e59369b56cce58b47be6dcf6f20d9732
+      internalID: 571602916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Reflection_7
+      name: Coins_2
       rect:
         serializedVersion: 2
-        x: 59
-        y: 172
-        width: 52
-        height: 6
+        x: 32
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 347bd5bab52a55ff0800000000000000
-      internalID: -47953706416752829
+      spriteID: 474bf562d74f8e04c84ddc4eb598fca4
+      internalID: 218570478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Reflection_8
+      name: Coins_3
       rect:
         serializedVersion: 2
-        x: 131
-        y: 157
-        width: 82
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 26a00d67ac73e9f00800000000000000
-      internalID: 1125398299605469794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Reflection_9
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 134
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 54af5cd915a0bcdd0800000000000000
-      internalID: -2464865025399588283
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Reflection_10
-      rect:
-        serializedVersion: 2
-        x: 203
-        y: 126
-        width: 10
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 730fc3defd7a547b0800000000000000
-      internalID: -5240598011175964617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Water Reflection_11
-      rect:
-        serializedVersion: 2
-        x: 18
+        x: 0
         y: 96
-        width: 17
-        height: 6
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 00222786822c2ff00800000000000000
-      internalID: 1149194333739688448
+      spriteID: f47cba657bb1fbd468fa38205199d1f1
+      internalID: -1915105105
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Reflection_12
+      name: Coins_4
       rect:
         serializedVersion: 2
-        x: 97
+        x: 16
         y: 96
-        width: 6
-        height: 6
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: da413f06169549bd0800000000000000
-      internalID: -2624374408076913491
+      spriteID: c40157a06339096449e581fcbab7ca3d
+      internalID: 902934357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Reflection_13
+      name: Coins_5
       rect:
         serializedVersion: 2
-        x: 150
+        x: 32
         y: 96
-        width: 25
-        height: 10
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 43160745b96a6e740800000000000000
-      internalID: 5181011607403127092
+      spriteID: f78731958ff83d8448eb8832c142e9aa
+      internalID: -316673645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Reflection_14
+      name: Coins_6
       rect:
         serializedVersion: 2
-        x: 192
-        y: 62
-        width: 32
-        height: 6
+        x: 0
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9d9d89fa6d881b390800000000000000
-      internalID: -7804306223605949991
+      spriteID: 32b65a31b5473c442b99aba61345d927
+      internalID: 609263991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Reflection_15
+      name: Coins_7
       rect:
         serializedVersion: 2
-        x: 22
-        y: 51
-        width: 100
-        height: 6
+        x: 16
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 26057e1c9b0d89f20800000000000000
-      internalID: 3429720612483321954
+      spriteID: 9ec1658c0479b7a49a851655d53f7a3c
+      internalID: 958980997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Reflection_16
+      name: Coins_8
       rect:
         serializedVersion: 2
-        x: 25
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1ec5a557bb4c34298f923037e2a352
+      internalID: -687828688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coins_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29582ce0a1659c3479237dba61d3652e
+      internalID: 155665773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coins_10
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edf420dd8243c2940845d73a96fdcc11
+      internalID: 1380661367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coins_11
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c99ebeb78e41446af0b3d93bd3c1ca
+      internalID: 1623821982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coins_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b44ae97dd261a149a5aec3ae14060c3
+      internalID: 366138837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coins_13
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ea1a90329f3c149866310592253383
+      internalID: 1341687448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coins_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99125ca4942958d44b438988b028ae5d
+      internalID: 767243779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coins_15
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 32
-        width: 6
-        height: 6
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 49450719711269240800000000000000
-      internalID: 4798058838117864596
+      spriteID: 733bd4efb24bb9442b419a76a1cdac60
+      internalID: -1475974352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Reflection_17
+      name: Coins_16
       rect:
         serializedVersion: 2
-        x: 146
-        y: 24
-        width: 6
-        height: 6
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1288c9d719eabc390800000000000000
-      internalID: -7796946389960980447
+      spriteID: 888d81fdeeb58ae40806a14fb1f640ed
+      internalID: 1867670125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Reflection_18
+      name: Coins_17
       rect:
         serializedVersion: 2
-        x: 18
-        y: 13
-        width: 40
-        height: 6
+        x: 32
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8d2e3d9fdf5c68560800000000000000
-      internalID: 7315752339318760152
+      spriteID: 4e029e60cdd4eeb42b3aa74c140eb2a0
+      internalID: 629542931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water Reflection_19
+      name: Coins_18
       rect:
         serializedVersion: 2
-        x: 218
-        y: 17
-        width: 36
-        height: 6
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d230283e9ea049d70800000000000000
-      internalID: 9048869550954775341
+      spriteID: b9492cae0e0bbc849a838577de78eddf
+      internalID: 1252934975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coins_19
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59dc39e4220d6d541ac4a1ad0cbf939c
+      internalID: 1908882174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coins_20
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c26a607d00774ce418ccec84e5f47a5d
+      internalID: -42628105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coins_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fbeb24d86b95024991f6fb0a3b23677
+      internalID: 823713558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coins_22
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f5dbacd7014a514a94c6e79c2f96754
+      internalID: -1078414799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coins_23
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 100b826cbfcd92c4a86794f0c2eb147a
+      internalID: 1255216840
       vertices: []
       indices: 
       edges: []
@@ -613,7 +644,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ee9f93d66f45b484dbbffa53ed3cea2e
     internalID: 0
     vertices: []
     indices: 
@@ -621,28 +652,34 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Water Reflection_0: -1708298989734703246
-      Water Reflection_1: 3173004689682008117
-      Water Reflection_10: -5240598011175964617
-      Water Reflection_11: 1149194333739688448
-      Water Reflection_12: -2624374408076913491
-      Water Reflection_13: 5181011607403127092
-      Water Reflection_14: -7804306223605949991
-      Water Reflection_15: 3429720612483321954
-      Water Reflection_16: 4798058838117864596
-      Water Reflection_17: -7796946389960980447
-      Water Reflection_18: 7315752339318760152
-      Water Reflection_19: 9048869550954775341
-      Water Reflection_2: 6613812683726941108
-      Water Reflection_3: 3607274785859721078
-      Water Reflection_4: 1393973448332501845
-      Water Reflection_5: 861000606161428715
-      Water Reflection_6: -2338319922011612778
-      Water Reflection_7: -47953706416752829
-      Water Reflection_8: 1125398299605469794
-      Water Reflection_9: -2464865025399588283
+      Coins_0: -2322180950842035098
+      Coins_1: 571602916
+      Coins_10: 1380661367
+      Coins_11: 1623821982
+      Coins_12: 366138837
+      Coins_13: 1341687448
+      Coins_14: 767243779
+      Coins_15: -1475974352
+      Coins_16: 1867670125
+      Coins_17: 629542931
+      Coins_18: 1252934975
+      Coins_19: 1908882174
+      Coins_2: 218570478
+      Coins_20: -42628105
+      Coins_21: 823713558
+      Coins_22: -1078414799
+      Coins_23: 1255216840
+      Coins_3: -1915105105
+      Coins_4: 902934357
+      Coins_5: -316673645
+      Coins_6: 609263991
+      Coins_7: 958980997
+      Coins_8: -687828688
+      Coins_9: 155665773
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(PlayerCoinsController))]
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField]
@@ -14,10 +15,12 @@ public class PlayerInteraction : MonoBehaviour
     private Interactable _currentInteractable;
 
     private PlayerMovement _playerMovement;
+    private PlayerCoinsController _coinController;
 
     void Awake()
     {
         _playerMovement = GetComponent<PlayerMovement>();
+        _coinController = GetComponent<PlayerCoinsController>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -54,14 +57,16 @@ public class PlayerInteraction : MonoBehaviour
     {
         UpdateCurrentInteractable();
 
-        if (_currentInteractable != null && !_playerMovement.IsDashing && Keyboard.current.sKey.wasPressedThisFrame)
+        if (_currentInteractable != null && !_playerMovement.IsDashing && Keyboard.current.sKey.wasPressedThisFrame && _coinController.PlayerCoins >= _currentInteractable.InteractionCost)
         {
+            _coinController.SpendCoins(_currentInteractable.InteractionCost);
             _currentInteractable.Interact();
             StartInteraction();
 
             if (!_currentInteractable.IsInteractable)
             {
                 _interactablesInRange.Remove(_currentInteractable);
+                _currentInteractable.OnExitRange();
                 _currentInteractable = null;
             }
         }
@@ -95,9 +100,9 @@ public class PlayerInteraction : MonoBehaviour
         if (_currentInteractable == closest)
             return;
 
-        //_currentInteractable.OnExitRange();
+        _currentInteractable?.OnExitRange();
         _currentInteractable = closest;
-        //_currentInteractable.OnEnterRange();
+        _currentInteractable.OnEnterRange();
     }
 
     private void StartInteraction()

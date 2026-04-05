@@ -11,10 +11,12 @@ public class CameraController : MonoBehaviour
     // Coroutines
     private Coroutine _waitCoroutine;
     private Coroutine _moveCoroutine;
+    private Coroutine _returnCameraCoroutine;
 
     // Coroutine properties
     private readonly float _waitSeconds = 2f;
     private readonly float _moveDuration = 3f;
+    private readonly float _returnDuration = 0.3f;
 
     void OnEnable()
     {
@@ -40,8 +42,10 @@ public class CameraController : MonoBehaviour
         if (_moveCoroutine != null)
             StopCoroutine(_moveCoroutine);
 
-        Vector3 currentPos = transform.localPosition;
-        transform.localPosition = new (0f, currentPos.y, currentPos.z);
+        if (_returnCameraCoroutine != null)
+            StopCoroutine(_returnCameraCoroutine);
+
+        _returnCameraCoroutine = StartCoroutine(ReturnCamera());
 
         // Wait before offsetting the camera
         if (_waitCoroutine != null)
@@ -75,6 +79,26 @@ public class CameraController : MonoBehaviour
             float smoothT = Mathf.SmoothStep(0f, 1f, t);
 
             transform.localPosition = Vector3.Lerp(currentPos, targetPos, smoothT);
+
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localPosition = targetPos;
+    }
+
+    private IEnumerator ReturnCamera()
+    {
+        Vector3 currentPos = transform.localPosition;
+        Vector3 targetPos = new (0f, currentPos.y, currentPos.z);
+
+        float time = 0f;
+
+        while (time < _returnDuration)
+        {
+            float t = time / _returnDuration;
+
+            transform.localPosition = Vector3.Lerp(currentPos, targetPos, t);
 
             time += Time.deltaTime;
             yield return null;
