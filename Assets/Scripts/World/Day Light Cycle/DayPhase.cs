@@ -4,11 +4,13 @@ using UnityEngine;
 [Serializable]
 public class DayPhase
 {
-    public string phaseName;
+    public PhaseNames phaseName;
     public float sunAngle;
 
+    // Volume properties
+
     [Header("Color Adjustments")]
-    public float postExposure;
+    public float postExposure = 0;
     public Color colorFilter = Color.white;
     public float saturation = 0f;
 
@@ -17,4 +19,15 @@ public class DayPhase
 
     [Header("Vignette")]
     public float vignetteIntensity = 0f;
+}
+
+public enum PhaseNames
+{
+    Dawn,
+    Morning,
+    Midday,
+    Evening,
+    Dusk,
+    NightStart,
+    NightEnd
 }

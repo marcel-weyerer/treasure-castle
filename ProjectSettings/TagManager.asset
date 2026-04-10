@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CoinParent
   - CostParent
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Character
   - Interactable
   - Coin
-  - 
+  - Coin Picker
   - 
   - 
   - 

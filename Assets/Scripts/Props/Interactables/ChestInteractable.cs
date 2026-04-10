@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
 
 public class ChestInteractable : Interactable
@@ -12,28 +11,36 @@ public class ChestInteractable : Interactable
     [SerializeField]
     private GameObject loot;
     [SerializeField]
+    private Transform lootParent;
+    [SerializeField]
     private int lootAmount = 5;
     [SerializeField]
     private float spawnForce = 5f;
     [SerializeField]
-    private readonly float spread = 0.5f;
+    private float spread = 0.5f;
 
+    // Spawn properties
     private readonly float _spawnDelay = 0.1f;
     private Vector3 _spawnPos;
+    private WaitForSeconds _spawnWait;
 
-    public override void Interact()
+    private void Awake()
     {
-        animator.SetBool("IsOpened", true);
-
-        SpawnCoins();
-
-        isInteractable = false;
+        _spawnPos = transform.position + new Vector3(transform.position.x, 2f, transform.position.z);
+        _spawnWait = new WaitForSeconds(_spawnDelay);
     }
 
-    private void SpawnCoins()
+    /// <summary>
+    /// Spawns loot and mark as not interactable
+    /// </summary>
+    public override void Interact()
     {
-        Vector3 chestPos = transform.position;
-        _spawnPos = new (chestPos.x, chestPos.y + 1f, chestPos.z);
+        if (!isInteractable)
+            return;
+
+        isInteractable = false;
+
+        animator.SetBool("IsOpened", true);
 
         StartCoroutine(SpawnCoroutine());
     }
@@ -44,17 +51,22 @@ public class ChestInteractable : Interactable
         {
             SpawnOne(i);
 
-            yield return new WaitForSeconds(_spawnDelay);
+            yield return _spawnWait;
         }
     }
 
+    /// <summary>
+    /// Spawns one loot object and calculates its spawn direction.
+    /// </summary>
+    /// <param name="index"></param>
     private void SpawnOne(int index)
     {        
-        GameObject newCoin = Instantiate(loot, _spawnPos, Quaternion.identity);
-        newCoin.transform.SetParent(GameObject.FindGameObjectWithTag("CoinParent").transform);
+        GameObject newLoot = Instantiate(loot, _spawnPos, Quaternion.identity);
+        CoinController coinController = newLoot.GetComponent<CoinController>();
+        coinController.DropCoinEntity();
+        newLoot.transform.SetParent(lootParent);
 
-        Rigidbody2D rb = newCoin.GetComponent<Rigidbody2D>();
-        if (rb != null)
+        if (newLoot.TryGetComponent<Rigidbody2D>(out var rb))
         {
             float offset = GetOffset(index);
 
@@ -63,6 +75,14 @@ public class ChestInteractable : Interactable
         }
     }
 
+
+    // Helper methods
+
+    /// <summary>
+    /// Calculates the spawn direction of a loot object
+    /// </summary>
+    /// <param name="index">Index of loot object</param>
+    /// <returns>Spawn direction of loot object</returns>
     private float GetOffset(int index)
     {
         if (lootAmount <= 1 || index == 0)

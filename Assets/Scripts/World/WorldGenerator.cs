@@ -10,15 +10,19 @@ public class WorldGenerator : MonoBehaviour
     [SerializeField]
     private Tilemap groundTilemap;
     [SerializeField]
-    private TileBase[] groundTiles;
+    private TileBase groundTile;
     [SerializeField]
-    private TileBase[] leftEndTiles;
+    private TileBase leftEndTile;
     [SerializeField]
-    private TileBase[] rightEndTiles;
+    private TileBase rightEndTile;
     [SerializeField]
     private int worldLength = 100;
 
     [Header("World Props")]
+    [SerializeField]
+    private GameObject starterCoin;
+    [SerializeField]
+    private int starterCoinsAmount;
     [SerializeField]
     private GameObject starterChest;
     
@@ -61,28 +65,39 @@ public class WorldGenerator : MonoBehaviour
         int tileOffset;
 
         // Set left end tile
-        groundTilemap.SetTile(_startCell, leftEndTiles[0]);
+        groundTilemap.SetTile(_startCell, leftEndTile);
 
         // Fill world with tiles
         for (tileOffset = 1; tileOffset < worldLength - 1; tileOffset++)
         {
             Vector3Int cellPos = new (_startCell.x + tileOffset, _startCell.y, _startCell.z);
 
-            // Choose random groundTile
-            int index = Random.Range(0, groundTiles.Length);
-
-            groundTilemap.SetTile(cellPos, groundTiles[index]);
+            groundTilemap.SetTile(cellPos, groundTile);
         }
 
         // Set right end tile
         Vector3Int endCell = new (_startCell.x + tileOffset, _startCell.y, _startCell.z);
 
-        groundTilemap.SetTile(endCell, rightEndTiles[0]);
+        groundTilemap.SetTile(endCell, rightEndTile);
     }
 
     private void BuildWorldProps()
     {
+        // Spawn player
+        player.transform.position = new (-20f, 2f, 0f);
+        player.SetActive(true);
+        
+        // Spawn starter chest
         starterChest.transform.position = new (0f, 1f, 0f);
+
+        // Spawn starter coins
+        Vector3 coinsSpawnPos = Vector3.Lerp(player.transform.position, starterChest.transform.position, 0.5f);
+        for (int i = 0; i < starterCoinsAmount; i++)
+        {
+            GameObject newCoin = Instantiate(starterCoin, coinsSpawnPos, Quaternion.identity);
+            CoinController coinController = newCoin.GetComponent<CoinController>();
+            coinController.DropCoinEntity();
+        }
     }
 
     // Helper functions
@@ -94,17 +109,17 @@ public class WorldGenerator : MonoBehaviour
             Debug.LogError("No ground tilemap found.");
             return false;
         }
-        if (groundTiles == null || groundTiles.Length == 0)
+        if (groundTile == null)
         {
-            Debug.LogError("No end tiles set.");
+            Debug.LogError("No ground tile set.");
             return false;
         }
-        if (leftEndTiles == null || leftEndTiles.Length == 0)
+        if (leftEndTile == null)
         {
-            Debug.LogError("No end tiles set.");
+            Debug.LogError("No end tile set.");
             return false;
         }
-        if (rightEndTiles == null || rightEndTiles.Length == 0)
+        if (rightEndTile == null)
         {
             Debug.LogError("No end tiles set.");
             return false;

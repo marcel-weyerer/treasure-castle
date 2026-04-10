@@ -194,7 +194,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 60380965}
-  - component: {fileID: 60380966}
   m_Layer: 0
   m_Name: Sun Pivot
   m_TagString: Untagged
@@ -210,28 +209,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60380964}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
+  m_LocalRotation: {x: 0.9659259, y: -0.25881898, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 337280782}
   m_Father: {fileID: 1308642769}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30}
---- !u!114 &60380966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60380964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e33fe6c4484264eafafad77711e687, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DayLightCycle
-  sun: {fileID: 337280781}
-  dayMinutes: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 210}
 --- !u!1001 &78334928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -298,6 +283,99 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4033345854141805628, guid: d6d1b89b2b25f384e85bb1259e1fa47a, type: 3}
   m_PrefabInstance: {fileID: 78334928}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &147484096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 147484097}
+  - component: {fileID: 147484099}
+  - component: {fileID: 147484098}
+  m_Layer: 11
+  m_Name: Coin Picker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &147484097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147484096}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1838139844}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &147484098
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147484096}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.2}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.2, y: 0.1}
+  m_EdgeRadius: 0
+--- !u!114 &147484099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147484096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec0bcb3913b2234ba06c6f0a9ee157d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCoinPicker
+  player: {fileID: 1838139839}
+  coinsController: {fileID: 1838139848}
 --- !u!1001 &211742320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -987,7 +1065,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 137.16063
+  m_FocalLength: 183.08461
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -1002,7 +1080,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 10.000001
+  field of view: 7.5000005
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1194,12 +1272,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619394800}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.3253, y: -2.87908, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2018689365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &670472549
 PrefabInstance:
@@ -1297,10 +1375,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
   m_IsGlobal: 1
-  priority: 0
+  priority: 1
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 3f9215ea0144899419cfbc0957140d3f, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 7f7f8387bd9b3c347965b7db49b3c4a7, type: 2}
 --- !u!4 &672418230
 Transform:
   m_ObjectHideFlags: 0
@@ -1309,12 +1387,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672418228}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.98151016, y: 1.299521, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.34378982, y: -1.5795591, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2018689365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &733430936
 GameObject:
@@ -1694,11 +1772,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ChestInteractable
   interactionCost: 1
   costPrefab: {fileID: 114108358062958338, guid: 377814b9ae4e33b4ea7769e6dc028e38, type: 3}
+  coinPrefab: {fileID: 4934730487904582357, guid: 9e2b37cbfbb496747a4cdf4fef361a3a, type: 3}
   costYOffset: 0.5
+  player: {fileID: 1838139839}
+  isOneTimeInteractable: 1
+  isInteractable: 1
   animator: {fileID: 911682743}
   loot: {fileID: 4934730487904582357, guid: 9e2b37cbfbb496747a4cdf4fef361a3a, type: 3}
-  lootAmount: 20
+  lootParent: {fileID: 1627791730}
+  lootAmount: 10
   spawnForce: 7
+  spread: 0.5
 --- !u!61 &911682746
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2258,12 +2342,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248036318}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.01279, y: -2.93375, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2083392261}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1308642768
 GameObject:
@@ -2292,7 +2376,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: -1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 60380965}
@@ -2305,56 +2389,64 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308642768}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83047176eeeb15d4aa8cf8fa6263bb43, type: 3}
+  m_Script: {fileID: 11500000, guid: d0e33fe6c4484264eafafad77711e687, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DayNightVolumeController
-  sunPivot: {fileID: 60380965}
-  globalVolume: {fileID: 672418229}
-  defaultProfile: {fileID: 11400000, guid: 3f9215ea0144899419cfbc0957140d3f, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::DaylightCycleController
+  sun: {fileID: 337280781}
+  sunPivot: {fileID: 60380964}
+  dayMinutes: 1
+  volume: {fileID: 672418229}
   phases:
-  - phaseName: Dawn
-    sunAngle: 0
-    postExposure: -1
-    colorFilter: {r: 0.7294118, g: 0.7686275, b: 1, a: 1}
-    saturation: 10
+  - phaseName: 0
+    sunAngle: 160
+    postExposure: -1.5
+    colorFilter: {r: 0.7019608, g: 0.7647059, b: 1, a: 1}
+    saturation: 5
     bloomIntensity: 2
-    vignetteIntensity: 0.4
-  - phaseName: Morning
-    sunAngle: -20
+    vignetteIntensity: 0.5
+  - phaseName: 1
+    sunAngle: 180
     postExposure: 0
-    colorFilter: {r: 1, g: 0.3921569, b: 0.3137255, a: 1}
-    saturation: 10
-    bloomIntensity: 2
-    vignetteIntensity: 0.3
-  - phaseName: Noon
-    sunAngle: -90
+    colorFilter: {r: 1, g: 0.5137255, b: 0.5137255, a: 1}
+    saturation: 5
+    bloomIntensity: 5
+    vignetteIntensity: 0.25
+  - phaseName: 2
+    sunAngle: 270
     postExposure: 0
     colorFilter: {r: 1, g: 1, b: 1, a: 1}
     saturation: 0
     bloomIntensity: 2
-    vignetteIntensity: 0.01
-  - phaseName: Evening
-    sunAngle: -160
+    vignetteIntensity: 0
+  - phaseName: 3
+    sunAngle: 340
     postExposure: 0
-    colorFilter: {r: 1, g: 0.7843138, b: 0.7058824, a: 1}
-    saturation: 10
+    colorFilter: {r: 1, g: 0.88235295, b: 0.8156863, a: 1}
+    saturation: 15
+    bloomIntensity: 0
+    vignetteIntensity: 0
+  - phaseName: 4
+    sunAngle: 0
+    postExposure: -0.5
+    colorFilter: {r: 0.627451, g: 0.63529414, b: 1, a: 1}
+    saturation: -10
     bloomIntensity: 2
-    vignetteIntensity: 0.25
-  - phaseName: Dusk
-    sunAngle: -180
+    vignetteIntensity: 0.3
+  - phaseName: 5
+    sunAngle: 20
     postExposure: -1
-    colorFilter: {r: 0.7294118, g: 0.7686275, b: 1, a: 1}
-    saturation: 10
-    bloomIntensity: 2
-    vignetteIntensity: 0.4
-  - phaseName: Night
-    sunAngle: 90
-    postExposure: -2
-    colorFilter: {r: 0.7294118, g: 0.76862746, b: 1, a: 1}
-    saturation: -25
-    bloomIntensity: 4
+    colorFilter: {r: 0.46666667, g: 0.47843137, b: 1, a: 1}
+    saturation: -20
+    bloomIntensity: 5
+    vignetteIntensity: 0.5
+  - phaseName: 6
+    sunAngle: 140
+    postExposure: -1
+    colorFilter: {r: 0.46666667, g: 0.47843137, b: 1, a: 1}
+    saturation: -20
+    bloomIntensity: 5
     vignetteIntensity: 0.5
 --- !u!1 &1331088637
 GameObject:
@@ -2500,12 +2592,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627791729}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.29331, y: 2.01223, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.28052008, y: -0.92152, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2083392261}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1753683418
 PrefabInstance:
@@ -2900,7 +2992,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.4}
+  m_Size: {x: 2, y: 0.4}
   m_EdgeRadius: 0
 --- !u!50 &1838139843
 Rigidbody2D:
@@ -2942,6 +3034,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 147484097}
   - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2962,7 +3055,6 @@ MonoBehaviour:
   dashDuration: 0.5
   dashCooldown: 3
   doubleTapTime: 0.2
-  animator: {fileID: 1838139841}
 --- !u!114 &1838139847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2975,7 +3067,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a302dcb71223a414791d22aba31c46ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
-  animator: {fileID: 1838139841}
 --- !u!114 &1838139848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2989,6 +3080,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCoinsController
   playerCoins: 0
+  coinPrefab: {fileID: 4934730487904582357, guid: 9e2b37cbfbb496747a4cdf4fef361a3a, type: 3}
+  dropForce: 2
 --- !u!1 &1906476345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3020,13 +3113,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WorldGenerator
   player: {fileID: 1838139839}
   groundTilemap: {fileID: 887508293}
-  groundTiles:
-  - {fileID: 11400000, guid: 2246b6170bb9dd24bbc3c9c3c90624cc, type: 2}
-  leftEndTiles:
-  - {fileID: 11400000, guid: 9c5983ebc89f8aa4a9de8dbb31c0e7c1, type: 2}
-  rightEndTiles:
-  - {fileID: 11400000, guid: ed34f9f8affa2d342b1a01c7872c411a, type: 2}
+  groundTile: {fileID: 11400000, guid: 2246b6170bb9dd24bbc3c9c3c90624cc, type: 2}
+  leftEndTile: {fileID: 11400000, guid: 9c5983ebc89f8aa4a9de8dbb31c0e7c1, type: 2}
+  rightEndTile: {fileID: 11400000, guid: ed34f9f8affa2d342b1a01c7872c411a, type: 2}
   worldLength: 100
+  starterCoin: {fileID: 4934730487904582357, guid: 9e2b37cbfbb496747a4cdf4fef361a3a, type: 3}
+  starterCoinsAmount: 1
   starterChest: {fileID: 911682741}
 --- !u!4 &1906476347
 Transform:
@@ -3170,6 +3262,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReflectionCameraController
   mainCamera: {fileID: 519420032}
+--- !u!1 &2018689364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2018689365}
+  m_Layer: 0
+  m_Name: Scene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2018689365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018689364}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3253, y: 2.87908, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 619394802}
+  - {fileID: 672418230}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2076652505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3266,6 +3391,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4033345854141805628, guid: d6d1b89b2b25f384e85bb1259e1fa47a, type: 3}
   m_PrefabInstance: {fileID: 2076652505}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2083392260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2083392261}
+  m_Layer: 0
+  m_Name: Parent Objects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2083392261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083392260}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.01279, y: 2.93375, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1627791730}
+  - {fileID: 1248036319}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2110554287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3916,9 +4074,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 619394802}
-  - {fileID: 672418230}
   - {fileID: 1838139844}
   - {fileID: 300832499}
-  - {fileID: 1627791730}
-  - {fileID: 1248036319}
+  - {fileID: 2083392261}
+  - {fileID: 2018689365}
