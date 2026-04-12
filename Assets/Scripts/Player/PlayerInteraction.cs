@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(PlayerCoinsController))]
 public class PlayerInteraction : MonoBehaviour
 {
     public bool IsInteracting { get; private set; } = false;
@@ -51,10 +52,9 @@ public class PlayerInteraction : MonoBehaviour
 
         Interactable interactable = other.GetComponent<Interactable>();
 
-        if (interactable == null || !interactable.IsInteractable)
+        if (interactable == null)
             return;
 
-        // Add new interactable to list
         if (!_interactablesInRange.Contains(interactable))
             _interactablesInRange.Add(interactable);
     }
@@ -145,7 +145,7 @@ public class PlayerInteraction : MonoBehaviour
 
         // Stop player movement and start interacting animation
         _playerMovement.StartInteracting();
-        _animator.SetInteger("CharacterState", (int)CharacterStates.Interacting);
+        _playerMovement.SetState(CharacterStates.Interacting);
         
         if (_currentInteractable == interactable)
             IsInteracting = false;
@@ -164,20 +164,18 @@ public class PlayerInteraction : MonoBehaviour
     /// </summary>
     private void UpdateCurrentInteractable()
     {
-        _interactablesInRange.RemoveAll(interactable => interactable == null || !interactable.IsInteractable);
+        _interactablesInRange.RemoveAll(interactable => interactable == null);
 
-        if (_interactablesInRange.Count == 0)
-        {
-            SetCurrentInteractable(null);
-            return;
-        }
-
+        // Find closest interactable
         float closestDistanceSqr = float.MaxValue;
         Interactable closest = null;
         Vector3 playerPosition = transform.position;
 
         foreach (Interactable interactable in _interactablesInRange)
         {
+            if (!interactable.IsInteractable)
+                continue;
+
             float distanceSqr = (interactable.transform.position - playerPosition).sqrMagnitude;
 
             if (distanceSqr < closestDistanceSqr)

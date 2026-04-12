@@ -149,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
     /// Set animation state.
     /// </summary>
     /// <param name="state">New character state</param>
-    private void SetState(CharacterStates state)
+    public void SetState(CharacterStates state)
     {
         if (_currentState == state)
             return;

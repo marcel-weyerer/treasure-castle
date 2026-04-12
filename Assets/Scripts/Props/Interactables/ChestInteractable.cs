@@ -24,9 +24,9 @@ public class ChestInteractable : Interactable
     private Vector3 _spawnPos;
     private WaitForSeconds _spawnWait;
 
-    private void Awake()
+    protected override void Awake()
     {
-        _spawnPos = transform.position + new Vector3(transform.position.x, 2f, transform.position.z);
+        base.Awake();
         _spawnWait = new WaitForSeconds(_spawnDelay);
     }
 
@@ -38,6 +38,7 @@ public class ChestInteractable : Interactable
         if (!isInteractable)
             return;
 
+        _spawnPos = transform.position + new Vector3(0f, 1f, 0f);
         isInteractable = false;
 
         animator.SetBool("IsOpened", true);

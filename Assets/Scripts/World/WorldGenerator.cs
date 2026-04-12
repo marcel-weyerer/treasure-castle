@@ -3,28 +3,23 @@ using UnityEngine.Tilemaps;
 
 public class WorldGenerator : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject player;
-
     [Header("World properties")]
-    [SerializeField]
-    private Tilemap groundTilemap;
-    [SerializeField]
-    private TileBase groundTile;
-    [SerializeField]
-    private TileBase leftEndTile;
-    [SerializeField]
-    private TileBase rightEndTile;
-    [SerializeField]
-    private int worldLength = 100;
+    [SerializeField] private Tilemap groundTilemap;
+    [SerializeField] private TileBase groundTile;
+    [SerializeField] private TileBase leftEndTile;
+    [SerializeField] private TileBase rightEndTile;
+    [SerializeField] private int worldLength = 100;
 
     [Header("World Props")]
-    [SerializeField]
-    private GameObject starterCoin;
-    [SerializeField]
-    private int starterCoinsAmount;
-    [SerializeField]
-    private GameObject starterChest;
+    [SerializeField] private GameObject starterCoin;
+    [SerializeField] private int starterCoinsAmount;
+
+    [SerializeField] private GameObject starterCamp;
+    [SerializeField] private GameObject starterChest;
+
+    [Header("Player properties")]
+    [SerializeField] private GameObject player;
+    [SerializeField] private float playerOffset = -20f;
     
     private Vector3Int _startCell;
 
@@ -50,10 +45,6 @@ public class WorldGenerator : MonoBehaviour
 
         // Setup world props
         BuildWorldProps();
-
-        // Spawn player
-        player.transform.position = new (-20f, 2f, 0f);
-        player.SetActive(true);
     }
 
     // Build methods
@@ -84,11 +75,14 @@ public class WorldGenerator : MonoBehaviour
     private void BuildWorldProps()
     {
         // Spawn player
-        player.transform.position = new (-20f, 2f, 0f);
+        player.transform.position = new (playerOffset, 2f, 0f);
         player.SetActive(true);
+
+        // Spawn starter chest
+        starterChest.transform.position = new (playerOffset / 2f, 1f, 0f);
         
         // Spawn starter chest
-        starterChest.transform.position = new (0f, 1f, 0f);
+        starterCamp.transform.position = new (0f, 1f, 0f);
 
         // Spawn starter coins
         Vector3 coinsSpawnPos = Vector3.Lerp(player.transform.position, starterChest.transform.position, 0.5f);

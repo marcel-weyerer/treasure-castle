@@ -39,7 +39,7 @@ public abstract class Interactable : MonoBehaviour
     public bool IsInteractable        => isInteractable;
     public bool IsOneTimeInteractable => isOneTimeInteractable;
 
-    private void Start()
+    protected virtual void Awake()
     {
         _coinsController = player.GetComponent<PlayerCoinsController>();
         _coinParent = GameObject.FindGameObjectWithTag("CoinParent").transform;
@@ -124,7 +124,8 @@ public abstract class Interactable : MonoBehaviour
                 StartCoroutine(SpendOneCoin(GetWorldTarget(positions[i])));
                 spentCoins++;
 
-                yield return new WaitForSeconds(SpendDelay);
+                if (spentCoins < interactionCost)
+                    yield return new WaitForSeconds(SpendDelay);
             }
 
             if (outOfCoins) break;
@@ -132,8 +133,10 @@ public abstract class Interactable : MonoBehaviour
 
         if (spentCoins == interactionCost)
         {
-            // Wait for all in-flight coin animations to finish before destroying them
-            yield return new WaitUntil(() => _coinPrefabs.Count >= spentCoins);
+            // Wait one frame per coin animation duration
+            yield return new WaitForSeconds(ShowDuration);
+
+            if (this == null) yield break;
 
             Interact();
             DestroyList(_coinPrefabs);
@@ -158,7 +161,7 @@ public abstract class Interactable : MonoBehaviour
         coin.GetComponent<Rigidbody2D>().simulated = false;
 
         _coinPrefabs.Add(coin);
-        _coinsController.RemoveCoin();
+        _coinsController.SpendCoin();
 
         yield return LerpPosition(coin, startPos, targetPos, ShowDuration);
 
