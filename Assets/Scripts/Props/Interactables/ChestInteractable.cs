@@ -17,7 +17,7 @@ public class ChestInteractable : Interactable
     [SerializeField]
     private float spawnForce = 5f;
     [SerializeField]
-    private float spread = 0.5f;
+    private float spread = 0.3f;
 
     // Spawn properties
     private readonly float _spawnDelay = 0.1f;
