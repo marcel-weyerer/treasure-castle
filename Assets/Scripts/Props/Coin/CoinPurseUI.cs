@@ -24,10 +24,10 @@ public class CoinPurseUI : MonoBehaviour
     [SerializeField] private PlayerCoinsController coinsController;
 
     // Coroutine parameters
-    private readonly float _dropDuration = 0.3f;
+    private readonly float _dropDuration = 0.5f;
     private readonly float _bounceSpinSpeed = 720f;   // degrees/sec while bouncing off
     private readonly float _bounceFallDistance = 200f;
-    private readonly float _bounceDuration = 0.4f;
+    private readonly float _bounceDuration = 0.5f;
 
     private readonly List<List<GameObject>> _stackCoins = new();
 

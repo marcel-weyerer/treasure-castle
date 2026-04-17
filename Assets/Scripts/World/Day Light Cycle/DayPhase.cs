@@ -10,7 +10,6 @@ public class DayPhase
     // Volume properties
 
     [Header("Color Adjustments")]
-    public float postExposure = 0;
     public Color colorFilter = Color.white;
     public float saturation = 0f;
 

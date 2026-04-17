@@ -87,7 +87,6 @@ public class SunRotationController : MonoBehaviour
     {
         if (_colorAdjustments != null)
         {
-            _colorAdjustments.postExposure.value = Mathf.Lerp(from.postExposure, to.postExposure, t);
             _colorAdjustments.colorFilter.value  = Color.Lerp(from.colorFilter,  to.colorFilter,  t);
             _colorAdjustments.saturation.value   = Mathf.Lerp(from.saturation,   to.saturation,   t);
         }

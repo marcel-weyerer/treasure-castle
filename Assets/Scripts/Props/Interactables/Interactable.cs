@@ -11,9 +11,6 @@ public abstract class Interactable : MonoBehaviour
     [SerializeField] private GameObject coinPrefab;
     [SerializeField] private float costYOffset = 0f;
 
-    [Header("Player")]
-    [SerializeField] private GameObject player;
-
     [Header("Interactable")]
     [SerializeField] private bool isOneTimeInteractable = true;
     [SerializeField] protected bool isInteractable = true;
@@ -25,6 +22,7 @@ public abstract class Interactable : MonoBehaviour
     private const float SpawnDelay   = 0.01f;
     private const float SpendDelay   = 0.2f;
 
+    private GameObject _player;
     private PlayerCoinsController _coinsController;
     private Transform _coinParent;
     private Transform _costParent;
@@ -35,13 +33,15 @@ public abstract class Interactable : MonoBehaviour
     // Events
     public event Action<Interactable> Interaction;
 
-    public int  InteractionCost       => interactionCost;
-    public bool IsInteractable        => isInteractable;
+    public int InteractionCost => interactionCost;
+    public bool IsInteractable => isInteractable;
     public bool IsOneTimeInteractable => isOneTimeInteractable;
 
     protected virtual void Awake()
     {
-        _coinsController = player.GetComponent<PlayerCoinsController>();
+        _player = GameObject.FindGameObjectWithTag("Player");
+
+        _coinsController = _player.GetComponent<PlayerCoinsController>();
         _coinParent = GameObject.FindGameObjectWithTag("CoinParent").transform;
         _costParent = GameObject.FindGameObjectWithTag("CostParent").transform;
     }
@@ -66,6 +66,7 @@ public abstract class Interactable : MonoBehaviour
             StopCoroutine(_spendCoroutine);
             _spendCoroutine = null;
         }
+
 
         ReleaseCoins();
     }
@@ -138,8 +139,8 @@ public abstract class Interactable : MonoBehaviour
 
             if (this == null) yield break;
 
-            Interact();
             DestroyList(_coinPrefabs);
+            Interact();
             Interaction?.Invoke(this);
         }
         else
@@ -153,7 +154,7 @@ public abstract class Interactable : MonoBehaviour
     private IEnumerator SpendOneCoin(Vector3 targetPos)
     {
         // Capture world position before reparenting to avoid local-space mismatch
-        Vector3 startPos = player.transform.position;
+        Vector3 startPos = _player.transform.position;
 
         GameObject coin = Instantiate(coinPrefab, startPos, Quaternion.identity);
         coin.transform.SetParent(_coinParent);
