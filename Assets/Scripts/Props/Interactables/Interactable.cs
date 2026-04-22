@@ -35,6 +35,10 @@ public abstract class Interactable : MonoBehaviour
 
     public int InteractionCost => interactionCost;
     public bool IsInteractable => isInteractable;
+    public void SetIsInteractable(bool interactable)
+    {
+        isInteractable = interactable;
+    }
     public bool IsOneTimeInteractable => isOneTimeInteractable;
 
     protected virtual void Awake()

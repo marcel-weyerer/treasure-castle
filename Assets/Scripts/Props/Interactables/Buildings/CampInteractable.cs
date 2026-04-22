@@ -4,6 +4,7 @@ using UnityEngine;
 public class CampInteractable : Interactable
 {
     [SerializeField] private GameObject[] states;
+    [SerializeField] private StateBuilding[] stateBuildings;
 
     // Coroutine parameters
     private float _blockInteractionDuration = 60f;
@@ -39,6 +40,16 @@ public class CampInteractable : Interactable
             states[i].SetActive(i == index);
 
         _currentState = index;
+
+        // Activate all building belonging to this state
+        foreach (StateBuilding sb in stateBuildings)
+        {
+            if (sb.state <= _currentState && !sb.building.activeSelf)
+            {
+                sb.building.transform.position = sb.position;
+                sb.building.SetActive(true);
+            }
+        }
     }
 
     // Block interaction coroutine
