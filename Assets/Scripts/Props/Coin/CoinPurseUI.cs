@@ -31,6 +31,9 @@ public class CoinPurseUI : MonoBehaviour
 
     private readonly List<List<GameObject>> _stackCoins = new();
 
+    // Pool of coins to avoid constant instantiating and destroying prefabs
+    private Queue<GameObject> _coinPool = new();
+
     // Calculates total coins in all stacks
     private int TotalCoins
     {
@@ -46,6 +49,14 @@ public class CoinPurseUI : MonoBehaviour
     {
         for (int i = 0; i < stacks.Length; i++)
             _stackCoins.Add(new List<GameObject>());
+
+        // Pre-instantiate max possible coins
+        for (int i = 0; i < maxCoinsInPurse; i++)
+        {
+            GameObject coin = Instantiate(coinPrefab);
+            coin.SetActive(false);
+            _coinPool.Enqueue(coin);
+        }
     }
 
     /// <summary>
@@ -69,7 +80,7 @@ public class CoinPurseUI : MonoBehaviour
         float randomRot = Random.Range(60f, 360f);
 
         // Spawn new purse coin
-        GameObject coin = Instantiate(coinPrefab, stacks[stackIndex]);
+        GameObject coin = GetCoin(stacks[stackIndex]);
         RectTransform rt = coin.GetComponent<RectTransform>();
         rt.anchoredPosition = new Vector2(0f, spawnY);
         rt.localEulerAngles = new Vector3(0f, 0f, randomRot);
@@ -104,7 +115,7 @@ public class CoinPurseUI : MonoBehaviour
         List<GameObject> stack = _stackCoins[stackIndex];
         GameObject top = stack[^1];
         stack.RemoveAt(stack.Count - 1);
-        Destroy(top);
+        ReturnCoin(top);
     }
 
     // Fail chance helpers
@@ -159,6 +170,28 @@ public class CoinPurseUI : MonoBehaviour
         }
 
         return stacks.Length - 1; // Fallback
+    }
+
+    // Helpers
+
+    /// <summary>
+    /// Deques a coin if
+    /// </summary>
+    /// <param name="parent"></param>
+    /// <returns></returns>
+    private GameObject GetCoin(Transform parent)
+    {
+        GameObject coin = _coinPool.Count > 0 ? _coinPool.Dequeue() : Instantiate(coinPrefab);
+        coin.transform.SetParent(parent, false);
+        coin.SetActive(true);
+        return coin;
+    }
+
+    private void ReturnCoin(GameObject coin)
+    {
+        coin.SetActive(false);
+        coin.transform.SetParent(transform, false);
+        _coinPool.Enqueue(coin);
     }
 
     // Animation
@@ -217,6 +250,6 @@ public class CoinPurseUI : MonoBehaviour
         }
 
         coinsController.DropCoin(removeFromPurse: false);
-        Destroy(rt.gameObject);
+        ReturnCoin(rt.gameObject);
     }
 }
